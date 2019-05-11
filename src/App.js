@@ -40,6 +40,6 @@ export default class ShippingLabelMaker extends Component{
             />
         )}
       </div>
-    )
+    );
   }
 }

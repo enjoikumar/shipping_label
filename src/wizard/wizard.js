@@ -14,6 +14,17 @@ export default class Wizard extends Component{
       showNextButton: true,
       showConfirm: false
     };
+
+    this.handleState = this.handleState.bind(this);
+  }
+
+  handleState(event) {
+    const key = event.target.getAttribute('data-id')
+    const value = event.target.value;
+
+    this.setState({
+      wizardContext: { ...this.state.wizardContext, [key]: value }
+    });
   }
 
   render(){
@@ -37,5 +48,5 @@ Wizard.propTypes = {
   header: PropTypes.func.isRequired,
   steps: PropTypes.array.isRequired,
   wizardContext: PropTypes.object.isRequired,
-  onComplete: PropTypes.func.isRequired
+  onAction: PropTypes.func.isRequired
 };

@@ -2,8 +2,22 @@ import React, {Component} from 'react';
 
 export default class ToStep extends Component{
   render(){
+    const {onAction} = this.props;
+    const toStepProp = this.props.wizardContext.toStepProp
     return(
-      <div>this is the To Form</div>
+      <div>
+        <p>enter address</p>
+        <input
+          placeholder="name"
+          type="text"
+          value={toStepProp.name}
+          />
+      </div>
     )
   }
 }
+
+ToStep.defaultProps ={
+  wizardContext: {},
+  onAction: () => {}
+};

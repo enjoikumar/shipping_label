@@ -6,8 +6,8 @@ import ShippingStep from './shippingStep.js';
 import ConfirmStep from './confirmStep.js';
 
 const CompleteForm = [
-  <ToStep />,
   <FromStep />,
+  <ToStep wizardContext='toStepProp' />,
   <WeightStep />,
   <ShippingStep />,
   <ConfirmStep />
