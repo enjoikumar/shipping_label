@@ -31,6 +31,26 @@ export default class Wizard extends Component{
     }
   }
 
+  next(){
+    this.setState((prevState, props) => {
+      return{
+        compState: prevState.compState + 1,
+        showPreviousButton: true,
+        showNextButton: prevState.compState + 1 === props.steps.length ? false : true
+      };
+    });
+  }
+
+  previous(){
+    if(this.state.compState > 1){
+      this.setState({
+        compState: this.state.compState - 1,
+        showNextButton: true
+      });
+    }
+    this.checkNavState(this.state.compState - 1);
+  }
+
   handleState(event){
     const key = event.target.getAttribute('data-id')
     const value = event.target.value;
@@ -60,27 +80,6 @@ export default class Wizard extends Component{
   confirm(val){
     this.props.onComplete(val);
   }
-
-  next(){
-    this.setState((prevState, props) => {
-      return{
-        compState: prevState.compState + 1,
-        showPreviousButton: true,
-        showNextButton: prevState.compState + 1 === props.steps.length ? false : true
-      };
-    });
-  }
-
-  previous(){
-    if(this.state.compState > 1){
-      this.setState({
-        compState: this.state.compState - 1,
-        showNextButton: true
-      });
-    }
-    this.checkNavState(this.state.compState - 1);
-  }
-
 
   render(){
     const Header = this.props.header;
