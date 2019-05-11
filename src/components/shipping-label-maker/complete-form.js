@@ -6,8 +6,8 @@ import ShippingStep from './shippingStep.js';
 import ConfirmStep from './confirmStep.js';
 
 const steps = [
-  <FromStep />,
-  <ToStep wizardContext='toStepProp' />,
+  <FromStep wizardContext='fromStepProp'  onAction={'handleNested'} />,
+  <ToStep wizardContext='toStepProp' onAction={'handleNested'} />,
   <WeightStep />,
   <ShippingStep />,
   <ConfirmStep />

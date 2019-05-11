@@ -12,13 +12,26 @@ export default class Wizard extends Component{
       showNavigation: true,
       showPreviousButton: false,
       showNextButton: true,
-      showConfirm: false
+      showConfirm: false,
+      compState: 1
     };
 
     this.handleState = this.handleState.bind(this);
+    this.handleNested = this.handleNested.bind(this);
+    this.confirm = this.confirm.bind(this);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
   }
 
-  handleState(event) {
+  checkNavState(next){
+    if (next < 2){
+      this.setState({
+        showPreviousButton: false
+      });
+    }
+  }
+
+  handleState(event){
     const key = event.target.getAttribute('data-id')
     const value = event.target.value;
 
@@ -27,11 +40,59 @@ export default class Wizard extends Component{
     });
   }
 
+  handleNested(event){
+    const key = event.target.getAttribute('data-id');
+    const stage = event.target.getAttribute('data-step');
+    const value = event.target.value
+
+    this.setState(prevState => ({
+      ...prevState,
+      wizardContext:{
+        ...prevState.wizardContext,
+        [stage]: {
+          ...prevState.wizardContext[stage],
+          [key]: value
+        }
+      }
+    }));
+  }
+
+  confirm(val){
+    this.props.onComplete(val);
+  }
+
+  next(){
+    this.setState((prevState, props) => {
+      return{
+        compState: prevState.compState + 1,
+        showPreviousButton: true,
+        showNextButton: prevState.compState + 1 === props.steps.length ? false : true
+      };
+    });
+  }
+
+  previous(){
+    if(this.state.compState > 1){
+      this.setState({
+        compState: this.state.compState - 1,
+        showNextButton: true
+      });
+    }
+    this.checkNavState(this.state.compState - 1);
+  }
+
+
   render(){
+    const Header = this.props.header;
     return(
       <div>
-        in the wizard
-
+        <Header />
+        {React.cloneElement(this.props.steps[this.state.compState - 1], {
+          onAction: this[
+            this.props.steps[this.state.compState -1].props.onAction
+          ],
+          wizardContext: this.state.wizardContext
+        })}
         <Navigation
           showPrevious={this.state.showPreviousButton}
           showNext={this.state.showNextButton}

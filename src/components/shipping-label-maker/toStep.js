@@ -3,14 +3,16 @@ import React, {Component} from 'react';
 export default class ToStep extends Component{
   render(){
     const {onAction} = this.props;
-    const toStepProp = this.props.wizardContext.toStepProp
+    const to = this.props.wizardContext.to
     return(
       <div>
         <p>enter address</p>
         <input
           placeholder="name"
           type="text"
-          value={toStepProp.name}
+          data-id="name"
+          data-step="toStepProp"
+          value={to.name}
           />
       </div>
     )
