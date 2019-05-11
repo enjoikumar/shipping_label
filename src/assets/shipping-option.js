@@ -1,7 +1,5 @@
-const shippingRate = 0.40
-shippingCost = weight * shippingRate * (shippingOption === shippingOption.ground ? 1 : 1.5);
 
-export function shippingOptions(option) {
+export function getShippingCost(option) {
   return (option === 1) ? "Ground" : "Express"
 }
 

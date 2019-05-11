@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class ToStep extends Component{
   render(){
     const {onAction} = this.props;
-    const to = this.props.wizardContext.to
+    const to = this.props.wizardContext.to;
     return(
       <div>
         <p>Enter destination address</p>
@@ -15,6 +15,7 @@ export default class ToStep extends Component{
 
             data-id="name"
             data-step="to"
+            onChange={onAction}
             value={to.name}
             />
         </div>
@@ -26,7 +27,8 @@ export default class ToStep extends Component{
 
             data-id="street"
             data-step="to"
-            value={to.name}
+            onChange={onAction}
+            value={to.street}
             />
         </div>
 
@@ -37,7 +39,8 @@ export default class ToStep extends Component{
 
             data-id="city"
             data-step="to"
-            value={to.name}
+            onChange={onAction}
+            value={to.city}
             />
         </div>
 
@@ -48,7 +51,8 @@ export default class ToStep extends Component{
 
             data-id="state"
             data-step="to"
-            value={to.name}
+            onChange={onAction}
+            value={to.state}
             />
         </div>
 
@@ -59,7 +63,8 @@ export default class ToStep extends Component{
 
             data-id="zip"
             data-step="to"
-            value={to.name}
+            onChange={onAction}
+            value={to.Zip}
             />
         </div>
 
