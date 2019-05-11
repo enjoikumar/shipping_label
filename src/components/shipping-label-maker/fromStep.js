@@ -5,7 +5,7 @@ export default class FromStep extends Component{
     const {onAction} = this.props;
     return(
       <div>
-        <p>To ship an item, please enter an address</p>
+        <p>To ship an item, please enter your address</p>
         <div>
           <input
             placeholder="Name"
@@ -48,7 +48,7 @@ export default class FromStep extends Component{
             type="text"
 
             data-step="from"
-            data-id="street"
+            data-id="state"
             onChange={onAction}
             value={this.props.wizardContext.from.state}
             />
@@ -60,7 +60,7 @@ export default class FromStep extends Component{
             type="text"
 
             data-step="from"
-            data-id="street"
+            data-id="zip"
             onChange={onAction}
             value={this.props.wizardContext.from.zip}
             />
