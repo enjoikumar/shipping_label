@@ -48,5 +48,5 @@ Wizard.propTypes = {
   header: PropTypes.func.isRequired,
   steps: PropTypes.array.isRequired,
   wizardContext: PropTypes.object.isRequired,
-  onAction: PropTypes.func.isRequired
+  onComplete: PropTypes.func.isRequired
 };

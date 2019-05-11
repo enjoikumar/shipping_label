@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 
 import Wizard from './wizard/wizard.js';
-import CompleteForm from './components/shipping-label-maker/complete-form.js';
+import steps from './components/shipping-label-maker/complete-form.js';
 import ShippingLabel from './components/shipping-label.js';
 import Header from './assets/header.js';
 import ShippingLabelState from './assets/shipping-label-state.js';
@@ -33,10 +33,10 @@ export default class ShippingLabelMaker extends Component{
         {this.state.labelReady ? (<ShippingLabel info={this.state.info} />):
         (
           <Wizard
-            Header={Header}
-            CompleteForm={CompleteForm}
+            header={Header}
+            steps={steps}
             wizardContext={ShippingLabelState}
-            CompletedForm={this.createLabel}
+            onComplete={this.createLabel}
             />
         )}
       </div>

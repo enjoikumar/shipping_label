@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = props => {
   return(
-    <h1>Shipping Label Maker </h1>
+    <h1>SHIPPING LABEL MAKER</h1>
   );
 }
 

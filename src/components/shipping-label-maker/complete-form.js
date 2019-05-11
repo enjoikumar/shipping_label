@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ToStep from './toStep.js';
 import FromStep from './fromStep.js';
 import WeightStep from './weightStep.js';
 import ShippingStep from './shippingStep.js';
 import ConfirmStep from './confirmStep.js';
 
-const CompleteForm = [
+const steps = [
   <FromStep />,
   <ToStep wizardContext='toStepProp' />,
   <WeightStep />,
@@ -13,4 +13,4 @@ const CompleteForm = [
   <ConfirmStep />
 ];
 
-export default CompleteForm;
+export default steps;

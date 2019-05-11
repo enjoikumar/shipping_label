@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 const hidden={
-  display: 'none'
+  display: 'block'
 };
 
 const Navigation = props => (
