@@ -1,6 +1,6 @@
 
 export function getShippingCost(option) {
-  return (option === 1) ? "Ground" : "Express"
+  return (option === 1) ? "Ground" : "Express";
 }
 
 export function getShippingRate(weight, shippingOption) {
