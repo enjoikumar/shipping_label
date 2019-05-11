@@ -20,6 +20,14 @@ export default class Wizard extends Component{
     return(
       <div>
         in the wizard
+
+        <Navigation
+          showPrevious={this.state.showPreviousButton}
+          showNext={this.state.showNextButton}
+          next={this.next}
+          previous={this.previous}
+          showNavigation={this.showNavigation}
+           />
       </div>
     )
   }
