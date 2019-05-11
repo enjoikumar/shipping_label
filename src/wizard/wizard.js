@@ -5,6 +5,17 @@ import Navigation from '../assets/nav.js';
 
 
 export default class Wizard extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      wizardContext: this.props.wizardContext,
+      showNavigation: true,
+      showPreviousButton: false,
+      showNextButton: true,
+      showConfirm: false
+    };
+  }
+
   render(){
     return(
       <div>

@@ -5,9 +5,16 @@ const hidden={
 };
 
 const Navigation = props => (
-  <div>
-    <button>Previous</button>
-    <button>Next</button>
+  <div style={props.show ? {} : hidden}>
+    <button
+      style={props.showPrevious ? {} : hidden}
+      onClick={props.previous}
+      >Previous</button>
+
+      <button
+        style={props.showNext ? {} : hidden}
+        onClick={props.next}
+        >Next</button>
   </div>
 );
 
