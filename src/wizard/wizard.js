@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class Wizard extends Component{
   render(){
@@ -9,3 +10,10 @@ export default class Wizard extends Component{
     )
   }
 }
+
+Wizard.propTypes = {
+  header: PropTypes.func.isRequired,
+  steps: PropTypes.array.isRequired,
+  wizardContext: PropTypes.object.isRequired,
+  onComplete: PropTypes.func.isRequired
+};
