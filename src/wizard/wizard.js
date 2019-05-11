@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+
 import PropTypes from 'prop-types';
+import Navigation from '../assets/nav.js';
+
 
 export default class Wizard extends Component{
   render(){
