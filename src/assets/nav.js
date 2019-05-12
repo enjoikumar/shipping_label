@@ -9,3 +9,5 @@ const Navigation = props => (
 );
 
 export default Navigation;
+
+//the navigational buttons. To go back and forth thru the pages

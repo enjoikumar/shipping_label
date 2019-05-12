@@ -18,3 +18,5 @@ const shippingLabelState = {
 }
 
 export default shippingLabelState;
+
+//default label state which will get populated later

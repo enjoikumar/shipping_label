@@ -14,3 +14,5 @@ const steps = [
 ];
 
 export default steps;
+
+//an array of the entire forms

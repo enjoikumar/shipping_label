@@ -10,8 +10,6 @@ export default class Wizard extends Component{
     this.state={
       wizardContext: this.props.wizardContext,
       showNavigation: true,
-      showPreviousButton: false,
-      showNextButton: true,
       showConfirm: false,
       compState: 1
     };
@@ -23,20 +21,11 @@ export default class Wizard extends Component{
     this.previous = this.previous.bind(this);
   }
 
-  checkNavState(next){
-    if (next < 2){
-      this.setState({
-        showPreviousButton: false
-      });
-    }
-  }
-
+  //figuring out the comp state so that when the number will turn 0 nothing happens
   next(){
     this.setState((prevState, props) => {
       return{
         compState: prevState.compState + 1,
-        showPreviousButton: true,
-        showNextButton: prevState.compState + 1 === props.steps.length ? false : true
       };
     });
   }
@@ -45,12 +34,11 @@ export default class Wizard extends Component{
     if(this.state.compState > 1){
       this.setState({
         compState: this.state.compState - 1,
-        showNextButton: true
       });
     }
-    this.checkNavState(this.state.compState - 1);
   }
 
+  //bind the values of the inputs to the states
   handleState(event){
     const key = event.target.getAttribute('data-id')
     const value = event.target.value;
@@ -60,6 +48,7 @@ export default class Wizard extends Component{
     });
   }
 
+  //same thing but making sure they're on the right page/data-step
   handleNested(event){
     const key = event.target.getAttribute('data-id');
     const stage = event.target.getAttribute('data-step');
@@ -86,6 +75,8 @@ export default class Wizard extends Component{
     return(
       <div>
         <Header />
+        //basically having the original props with new props merging in slowly using
+        //Compstate to make sure there isnt an error
         {React.cloneElement(this.props.steps[this.state.compState - 1], {
           onAction: this[
             this.props.steps[this.state.compState -1].props.onAction

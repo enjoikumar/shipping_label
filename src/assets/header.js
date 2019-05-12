@@ -7,3 +7,6 @@ const Header = props => {
 }
 
 export default Header;
+
+
+//A header that will be on every "page"

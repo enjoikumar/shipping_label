@@ -45,3 +45,5 @@ export default class ShippingLabel extends Component{
     )
   }
 }
+
+//displays the values, which at this point is the updated states
