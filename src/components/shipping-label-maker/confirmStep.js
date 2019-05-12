@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {getShippingCost, getShippingRate} from '../../assets/shipping-option.js';
+import { getShippingRate} from '../../assets/shipping-option.js';
 
 export default class ConfirmStep extends Component{
   constructor(props){
@@ -22,7 +22,7 @@ export default class ConfirmStep extends Component{
   }
 
   getShippingOption(){
-    return getShippingCost(this.state.shippingOption);
+    return (this.state.shippingOption);
   }
 
   getShippingCost(){

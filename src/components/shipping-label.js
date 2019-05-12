@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {getShippingCost, getShippingRate} from '../assets/shipping-option.js';
+import {getShippingRate} from '../assets/shipping-option.js';
 
 
 export default class ShippingLabel extends Component{
@@ -14,7 +14,7 @@ export default class ShippingLabel extends Component{
       <div>
         <h3>This is your shipping label:</h3>
         <div>
-          <p>{getShippingCost(this.state.shippingOption)}: Shipping</p>
+          <p>{(this.state.shippingOption)}: Shipping</p>
         {' '}
           <p>${getShippingRate(
               this.state.weight,

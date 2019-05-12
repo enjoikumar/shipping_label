@@ -1,20 +1,10 @@
 import React from 'react';
 
-const hidden={
-  display: 'block'
-};
-
 const Navigation = props => (
-  <div style={props.show ? {} : hidden}>
-    <button
-      style={props.showPrevious ? {} : hidden}
-      onClick={props.previous}
-      >Previous</button>
+  <div className="nav">
+    <button onClick={props.previous}>Previous</button>
 
-      <button
-        style={props.showNext ? {} : hidden}
-        onClick={props.next}
-        >Next</button>
+    <button onClick={props.next}>Next</button>
   </div>
 );
 

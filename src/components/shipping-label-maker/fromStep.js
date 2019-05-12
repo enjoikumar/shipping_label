@@ -4,9 +4,10 @@ export default class FromStep extends Component{
   render(){
     const {onAction} = this.props;
     return(
-      <div>
+      <div className="box">
         <p>To ship an item, please enter your address</p>
-        <div>
+        <div className="lineContent">
+          <label>Name</label>
           <input
             placeholder="Name"
             type='text'
@@ -18,7 +19,8 @@ export default class FromStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>Street:</label>
           <input
             placeholder="Street"
             type="text"
@@ -30,7 +32,8 @@ export default class FromStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>City:</label>
           <input
             placeholder="City"
             type="text"
@@ -42,7 +45,8 @@ export default class FromStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>State:</label>
           <input
             placeholder="State"
             type="text"
@@ -54,7 +58,8 @@ export default class FromStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>Zip code:</label>
           <input
             placeholder="Zip Code"
             type="text"

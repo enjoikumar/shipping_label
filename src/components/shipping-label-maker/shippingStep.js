@@ -7,14 +7,13 @@ export default class ShippingStep extends Component{
 
     return(
       <div>
-        <p>choose your shipping option</p>
+        <p>Choose your shipping option</p>
         <div>
           <select
             onChange={onAction}
             value={shippingOption}
             >
             <option defaultValue value="1">Ground</option>
-            <option value="2">Express</option>
           </select>
         </div>
       </div>

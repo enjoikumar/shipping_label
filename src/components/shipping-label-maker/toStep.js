@@ -5,10 +5,11 @@ export default class ToStep extends Component{
     const {onAction} = this.props;
     const to = this.props.wizardContext.to;
     return(
-      <div>
+      <div className="box">
         <p>Enter destination address</p>
 
-        <div>
+        <div className="lineContent">
+          <label>Name</label>
           <input
             placeholder="name"
             type="text"
@@ -20,7 +21,8 @@ export default class ToStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>Street</label>
           <input
             placeholder="Street"
             type="text"
@@ -32,7 +34,8 @@ export default class ToStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>City</label>
           <input
             placeholder="City"
             type="text"
@@ -44,7 +47,8 @@ export default class ToStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>State</label>
           <input
             placeholder="State"
             type="text"
@@ -56,7 +60,8 @@ export default class ToStep extends Component{
             />
         </div>
 
-        <div>
+        <div className="lineContent">
+          <label>Zip code</label>
           <input
             placeholder="Zip Code"
             type="text"
@@ -67,7 +72,6 @@ export default class ToStep extends Component{
             value={to.Zip}
             />
         </div>
-
       </div>
     )
   }

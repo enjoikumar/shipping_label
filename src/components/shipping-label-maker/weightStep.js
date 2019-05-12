@@ -5,8 +5,9 @@ export default class WeightStep extends Component{
     const {onAction} = this.props;
     const {weight} = this.props.wizardContext;
     return(
-      <div>
-        <p>weight</p>
+      <div className="weight">
+        <p>How much does the package Weigh</p>
+        <p>(Please use numbers only)</p>
         <input
           placeholder="weight"
           type="text"

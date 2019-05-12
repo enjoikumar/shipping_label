@@ -8,6 +8,9 @@ import ShippingLabelState from './assets/shipping-label-state.js';
 
 import './App.css';
 
+
+
+
 export default class ShippingLabelMaker extends Component{
   //state will be false, until the label is created and that info will be
   //binded to value
